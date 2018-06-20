@@ -9,3 +9,4 @@
 Ingredient.create(name: "Tomato")
 Crust.create(type: "Regular", price: 100)
 Recipe.create(price: 100)
+

@@ -32,9 +32,22 @@
   <body>
     <%= yield %>
     <div class="navbar">
-  <a href="#root">Home</a>
-  <a href="/customers/sign_in">Sign in</a>
-  <a href="/customers/sign_up">Register</a>
+    <%- if customer_signed_in? %>
+  <a href="/pizzas">Home</a>
+  <li>
+	  <%= link_to('Logout', destroy_customer_session_path, method: :delete) %>        
+	  </li>
+	  
+	  <a href="/orders"> Cart </a>
+  
+  
+	  <%else%>
+	  <a href="/pizzas">Home</a>
+  		<a href="/customers/sign_in">Sign in</a>
+  		<a href="/customers/sign_up">Register</a>	  
+	  
+	  
+	  <% end %>
 </div>
 
 
