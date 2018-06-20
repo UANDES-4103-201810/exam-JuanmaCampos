@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<head>
+<style>
+abcd {
+    width: 300px;
+    margin: auto;
+    border: 1px solid red;
+}
+</style>
+ </head>
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Pizzas</h1>
@@ -13,6 +25,7 @@
 
   <tbody>
     <% @pizzas.each do |pizza| %>
+    <div  class="abcd">
       <tr>
         <td><%= pizza.crust_id %></td>
         <td><%= pizza.recipe_id %></td>
@@ -21,9 +34,12 @@
         <td><%= link_to 'Destroy', pizza, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+    </div>
   </tbody>
 </table>
 
 <br>
 
 <%= link_to 'New Pizza', new_pizza_path %>
+
+</html>
